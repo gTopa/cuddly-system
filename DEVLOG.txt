@@ -5,3 +5,7 @@ Team: Used Lancer Evo
 12/05/16
 - Created Devlog - Gio
 - Tested Dark Sky API - Gio
+
+lamE -- 2016-12-05 5:40 PM
+- Changed up a couple pages in the design document.
+- Began work on the frontend for the HTML layout.
