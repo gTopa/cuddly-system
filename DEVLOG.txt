@@ -2,9 +2,9 @@ DESIGN DOC
 
 Team: Used Lancer Evo
 
-12/05/16
-- Created Devlog - Gio
-- Tested Dark Sky API - Gio
+topaG -- 2016-12-05 5:00
+- Created Devlog
+- Tested Dark Sky API
 
 lamE -- 2016-12-05 5:40 PM
 - Changed up a couple pages in the design document.
