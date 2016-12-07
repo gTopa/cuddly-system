@@ -1,17 +1,18 @@
-from flask import Flask, render_template
+from flask import Flask, session, render_template, redirect, url_for	
 import urllib2, json
+from utils.weatherUtils import getWeather
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def root():
-    u = urllib2.urlopen("https://newsapi.org/v1/articles?sortBy=latest&apiKey=490f5af0da6541dab948ebe1b84110d5")
-    response = u.read()
-    data = json.loads( response )
-    stri=""
-    return data["status"];
+    return redirect(url_for("weather"))
 
+@app.route("/weather")
+def weather():
+    p=getWeather()
+    return p["timezone"];
 
 if __name__ == "__main__":
    app.debug = True
