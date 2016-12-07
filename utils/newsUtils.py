@@ -4,11 +4,26 @@ def samplenews(source):
     stringres = 'https://newsapi.org/v1/articles?source=' + source + '&sortBy=latest&apiKey=7f93124e015c4d33bbc2e336b0f2244d'
     response = urllib2.urlopen(stringres)
     data = json.load(response)
-    dic = data[u'articles'][0]
+    dic = data[u'articles']
     print dic
     return dic
-print sources[1]
-samplenews(sources[1])
+print sources[7]
+samplenews(sources[7])
 
 
+#dictionary keys
 
+'''
+
+samplenews(sources[7]) <-- spits out list of top 10 latest articles from bloomberg
+
+
+description : gives you description of article
+title : title of the article
+author: author of article
+publishedAt: time in which article is published
+urlToImage
+
+in order to access put u next to it like in example u'articles' or u'title'
+
+'''
