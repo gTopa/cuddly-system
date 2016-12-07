@@ -2,7 +2,7 @@ DESIGN DOC
 
 Team: Used Lancer Evo
 
-topaG -- 2016-12-05 5:00
+topaG -- 2016-12-05 5:00 PM
 - Created Devlog
 - Tested Dark Sky API
 
@@ -14,3 +14,6 @@ zhangH -- 2016-12-07 2:04 AM
 - Created utils folder
 - Moved getWeather function to utils
 - Fixed redirect on root
+
+topaG -- 2016-12-06 4:30 PM
+- Tested google geocoder api
