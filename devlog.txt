@@ -10,10 +10,14 @@ lamE -- 2016-12-05 5:40 PM
 - Changed up a couple pages in the design document.
 - Began work on the frontend for the HTML layout.
 
+topaG -- 2016-12-06 4:30 PM
+- Tested google geocoder api
+
+lamE -- 2016-12-06 7:30 PM
+- Made the base.html page compatible with this project.
+
 zhangH -- 2016-12-07 2:04 AM
 - Created utils folder
 - Moved getWeather function to utils
 - Fixed redirect on root
 
-topaG -- 2016-12-06 4:30 PM
-- Tested google geocoder api

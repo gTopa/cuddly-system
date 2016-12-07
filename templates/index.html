@@ -1,0 +1,88 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% set active_page = "allStories" %}
+
+{% block content %}
+  <br>
+  <center>
+    <h4>{{ message }}</h4>
+  </center>
+  <br>
+  <div class="row">
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-3">
+      <div class="panel-body">
+	<a href="{{url_for('renderCreate')}}"><b><i>>[Click Here to Create a New Story!]<</i></b></a>
+      </div>
+    </div>
+    <div class="col-sm-7">
+    </div>
+    <div class="col-sm-1">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-3 text-left">
+      <div class="panel panel-default">
+	<div class="panel-heading">
+	  <center>
+	    <h4>All Stories</h4>
+	  </center>
+	</div>
+	<div class="panel-body">
+	  <table>
+	    {% for story in feed %}
+	    <tr>
+	      <td>
+		<a href="{{url_for('latestUpdate', postID = story.story_id)}}">{{story.title}} - {{story.timestamp_created}}</a>
+	      </td>
+	    </tr>
+	    {% endfor %}
+	  </table>
+	</div>
+      </div>
+    </div>
+    <div class="col-sm-7 text-left">
+      <div class="panel panel-default">
+	<div class="panel-heading">
+	  <center>
+	    <h4>Recent Stories</h4>
+	  </center>
+	</div>
+	<div class="panel-body">
+	  <table>
+	    {% for story in feed %}
+	    <tr>
+	      <td>
+		<b>'{{story.title}}'</b> - <i>Created on {{story.timestamp_created}}</i>
+		<br>
+		<br>
+		<b>Contributors: </b>
+		{% for user in story.get_usernames() %}
+		{{user}}, 
+		{% endfor %}
+		<br>
+		<br>
+		<b>Latest contribution at: </b>{{story.timestamp_latest_update}}
+		<br>
+		<br>
+		"...{{story.last_update}}"
+		<br>
+		<br>
+		<i><a href="{{url_for('.latestUpdate', postID = story.story_id)}}">View Latest Contribution</a></i>
+		<hr>
+		<hr>
+	      </td>
+	    </tr>
+	    {% endfor %}
+	  </table>
+	</div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+{% endblock %}
+
