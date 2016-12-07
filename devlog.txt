@@ -9,3 +9,8 @@ topaG -- 2016-12-05 5:00
 lamE -- 2016-12-05 5:40 PM
 - Changed up a couple pages in the design document.
 - Began work on the frontend for the HTML layout.
+
+zhangH -- 2016-12-07 2:04 AM
+- Created utils folder
+- Moved getWeather function to utils
+- Fixed redirect on root
