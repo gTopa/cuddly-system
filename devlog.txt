@@ -21,3 +21,8 @@ zhangH -- 2016-12-07 2:04 AM
 - Moved getWeather function to utils
 - Fixed redirect on root
 
+lamE -- 2016-12-07 9:04 PM
+- Created static and templates to move respective CSS and templates in.
+- Added basic functions to app.py and newsUtils.py to get the index.html News site running.
+- Configured index.html to list news articles and their images. Basic functionality with news site achieved.
+
