@@ -13,8 +13,17 @@ lamE -- 2016-12-05 5:40 PM
 topaG -- 2016-12-06 4:30 PM
 - Tested google geocoder api
 
+malickS -- 2016-12-06
+-Sucessfully created news data puller
+
 lamE -- 2016-12-06 7:30 PM
 - Made the base.html page compatible with this project.
+
+malickS -- 2016-12-07
+-Expapnded newsUtils.py, made a list of possible sources and a function that allows you to get the latest 10 articles by source.
+
+malickS -- 2016-12-07
+-Changed function to let you choose if you want top, popular, or latest.
 
 zhangH -- 2016-12-07 2:04 AM
 - Created utils folder
