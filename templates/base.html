@@ -68,17 +68,14 @@
             <span class="icon-bar"></span>                        
 	  </button>
 	  <a class="navbar-brand" href="{{ url_for('news') }}">ULE</a>
-	  <!--
-	  <div>Welcome, {{ welcomeuser }}. <a href="{{ url_for('logout') }}">Log Out</a></div>
-	  -->
 	</div>
 	<div class="collapse navbar-collapse" id="myNavbar">
 	  <ul class="nav navbar-nav navbar-right">
 	    <li class="{{ newsactive }}">
-	      <a href="{{ url_for(href) }}">News</a>
+	      <a href="/news">News</a>
 	    </li>
 	    <li class="{{ weatheractive }}">
-	      <a href="{{ url_for(href) }}">Weather</a>
+	      <a href="/weather">Weather</a>
 	    </li>
 	  </ul>
 	  
