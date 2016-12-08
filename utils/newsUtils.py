@@ -69,15 +69,16 @@ sources = ['abc-news-au',
            'usa-today',
            'wired-de',
            'wirtschafts-woche']
-def samplenews(site):
-    stringres = 'https://newsapi.org/v1/articles?source=' + sources[site] + '&sortBy=latest&apiKey=7f93124e015c4d33bbc2e336b0f2244d'
+def samplenews(site,order):
+    stringres = 'https://newsapi.org/v1/articles?source=' + sources[site] + '&sortBy=' + order + '&apiKey=7f93124e015c4d33bbc2e336b0f2244d'
     response = urllib2.urlopen(stringres)
     data = json.load(response)
     dic = data[u'articles']
     print dic
     return dic
 print sources[66]
-samplenews(66)
+#can sort by latest, top, or popular 
+samplenews(66,'latest')
 
 
 #dictionary keys

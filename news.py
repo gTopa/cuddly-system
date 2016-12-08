@@ -16,4 +16,5 @@ def pagethree():
 def samplenews():
     response = urllib2.urlopen('https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=7f93124e015c4d33bbc2e336b0f2244d')
     data = json.load(response)
+    dic = data[u'articles']
     return data

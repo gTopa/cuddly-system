@@ -17,7 +17,7 @@ def weather():
 
 @app.route("/news")
 def news():
-    dic = samplenews(66)
+    dic = samplenews(66,'latest')
     return render_template("index.html", newsactive="active", news=dic)
 
 if __name__ == "__main__":
