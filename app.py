@@ -1,10 +1,10 @@
 from flask import Flask, session, render_template, redirect, url_for, request
-import urllib2, json
+import urllib2, json, requests, os
 #from utils.newsUtils import samplenews
-from utils.weatherUtils import getWeather
+from utils.weatherUtils import getWeather, adrToCoords
 
 app = Flask(__name__)
-
+app.secret_key=os.urandom(32)
 
 @app.route("/")
 def root():
@@ -12,17 +12,19 @@ def root():
 
 @app.route("/weather")
 def weather():
-    if "address" in session:
-        p=getWeather('40.7128', '74.0059')
+    if "lat" in session:
+        p=getWeather(session['lat'], session['lng'])
+        return render_template("weather.html", weatherContent=p["daily"]["data"])
+        return p['timezone']
+        #return render_template('weather.html', adrForm="weatherContent=wc")
     else:
-        p=getWeather('40.7128', '74.0059')
-    wc=[p['timezone']]
-    return render_template('weather.html', weatherContent=wc);
+        return '<form action="/submitAddress" method="POST">Address: <input type="text" name="address"><input type="submit" name="submit" value="submit"><br></form>'
 
 @app.route("/submitAddress", methods=['POST'])
 def submitAddress():
-    adr=request.form('address')
-    Session.Add("address", adr)
+    adr=adrToCoords(request.form['address'])
+    session['lat']=adr['lat']
+    session['lng']=adr['lng']
     return redirect(url_for("weather"))
 
 @app.route("/news")

@@ -38,6 +38,11 @@ lamE -- 2016-12-07 9:04 PM
 malickS -- 2016-12-08
 -Added NYTimes API as backup for when newsapi goes down
 
-zhangH -- 2016-12-09 
+zhangH -- 2016-12-09 (a little past midnight)
 - Merged /weather progress to master
 - Added fixes for user inputs and location choice
+
+zhangH -- 2016-12-09 2:07 PM
+- Got session working
+- Got address to coords working 
+- Fed weather data to template
