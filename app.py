@@ -12,8 +12,18 @@ def root():
 
 @app.route("/weather")
 def weather():
-    p=getWeather()
-    return p["timezone"];
+    if "address" in session:
+        p=getWeather('40.7128', '74.0059')
+    else:
+        p=getWeather('40.7128', '74.0059')
+    wc=[p['timezone']]
+    return render_template('weather.html', weatherContent=wc);
+
+@app.route("/submitAddress", methods=['POST'])
+def submitAddress():
+    adr=request.form('address')
+    Session.Add("address", adr)
+    return redirect(url_for("weather"))
 
 @app.route("/news")
 def news():
