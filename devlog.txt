@@ -35,3 +35,5 @@ lamE -- 2016-12-07 9:04 PM
 - Added basic functions to app.py and newsUtils.py to get the index.html News site running.
 - Configured index.html to list news articles and their images. Basic functionality with news site achieved.
 
+malickS -- 2016-12-08
+-Added NYTimes API as backup for when newsapi goes down
