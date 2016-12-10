@@ -1,8 +1,80 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<center>
+  <h4>{{ message }}</h4>
+</center>
+<br>
+<div class="row">
+  <div class="col-sm-4">
+  </div>
+  <div class="col-sm-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+	<center>
+	  <h2>Today's Weather for:</h2>
+	  <br>
+	  <h2>{{ current["date"] }}</h2>
+	</center>
+      </div>
+      <div class="panel-body">
+	<img src='{{ current["condition"] }}.png'>
+	<br>
+	<hr>
+	<br>
+	<h4><b>High: <i>{{ current["high"] }}</i></b></h4>
+	<br>
+	<h4><b>Low: <i>{{ current["low"] }}</i></b></h4>
+	<br>
+	<h4><b>Precipitation: <i>{{ current["precipitation"] }}</i></b></h4>
+	<h4><b>Wind: <i>{{ current["wind"] }} MPH, {{ current["direction"] }}</i></b></h4>
+	<br>
+	<br>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+	<center>
+	  <h2>Seven Day Forecast</h2>
+	</center>
+      </div>
+    </div>
+    <div class="row" style="display: inline-block; float: none;">
+      {% for day in sevenday %}
+      <div class="col-sm-1">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <center>
+	      <h3>{{ day["day"] }}</h3>
+	    </center>
+	  </div>
+	  <div class="panel-body">
+	    <img src='{{ day["condition"] }}.png'>
+	    <br>
+	    <hr>
+	    <br>
+	    <h4><b>High: <i>{{ day["high"] }}</i></b></h4>
+	    <br>
+	    <h4><b>Low: <i>{{ day["low"] }}</i></b></h4>
+	    <br>
+	  </div>
+	</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
 
 <form>
-	Please Enter Your Address:
-	<br>
-	<input type="text" name="address"><br>
+  Please Enter Your Address:
+  <br>
+  <input type="text" name="address"><br>
 </form>
-
-{{weatherContent}}

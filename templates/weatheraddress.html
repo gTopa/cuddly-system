@@ -1,0 +1,30 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-sm-3">
+    </div>
+    <div class="col-sm-6">
+      <br>
+      <br>
+      <div class="panel panel-default">
+	<div class="panel-heading">
+	  <center>
+	    <h2>Please input your address here!</h2>
+	  </center>
+	</div>
+	<div class="panel-body">
+	  <form role="form" action="/weather" method="POST">
+	    <br>
+	    <b>Address: </b><input class="form-control" type="text" name="address" placeholder="Address">
+	    <br>
+	    <input class="form-control" type="submit" name="Submit!" value="Submit!">
+	  </form>
+	</div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+    </div>
+  </div>
+{% endblock %}

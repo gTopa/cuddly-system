@@ -46,3 +46,8 @@ zhangH -- 2016-12-09 2:07 PM
 - Got session working
 - Got address to coords working 
 - Fed weather data to template
+
+lamE -- 2016-12-10 5:31 PM
+-Weather.html and weatheraddress.html files redone due to being overwritten by commit. Improvements made. Weatheraddress.html gives address submissions to be processed and displayed accordingly on weather.html.
+-Changed some aesthetic things on INDEX.
+-Began work on the secondary CSS file.
