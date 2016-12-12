@@ -16,20 +16,20 @@
 	<center>
 	  <h2>Today's Weather for:</h2>
 	  <br>
-	  <h2>{{ current["date"] }}</h2>
+	  <h2>{{ current["time"] }}</h2>
 	</center>
       </div>
       <div class="panel-body">
-	<img src='{{ current["condition"] }}.png'>
+	<img src='{{ current["icon"] }}.png'>
 	<br>
 	<hr>
 	<br>
-	<h4><b>High: <i>{{ current["high"] }}</i></b></h4>
+	<h4><b>High: <i>{{ current["temperatureMax"] F}}</i></b></h4>
 	<br>
-	<h4><b>Low: <i>{{ current["low"] }}</i></b></h4>
+	<h4><b>Low: <i>{{ current["temperatureMin"] F}}</i></b></h4>
 	<br>
-	<h4><b>Precipitation: <i>{{ current["precipitation"] }}</i></b></h4>
-	<h4><b>Wind: <i>{{ current["wind"] }} MPH, {{ current["direction"] }}</i></b></h4>
+	<h4><b>Precipitation Chance: <i>{{ current["precipProbability"] }}</i></b></h4>
+	<h4><b>Wind: <i>{{ current["windSpeed"] }} MPH, {{ current["windBearing"] }}</i></b></h4>
 	<br>
 	<br>
       </div>
@@ -47,22 +47,22 @@
       </div>
     </div>
     <div class="row" style="display: inline-block; float: none;">
-      {% for day in sevenday %}
+      {% for day in weatherContent %}
       <div class="col-sm-1">
 	<div class="panel panel-default">
 	  <div class="panel-heading">
 	    <center>
-	      <h3>{{ day["day"] }}</h3>
+	      <h3>{{ weatherContent["time"] }}</h3>
 	    </center>
 	  </div>
 	  <div class="panel-body">
-	    <img src='{{ day["condition"] }}.png'>
+	    <img src='{{ weatherContent["icon"] }}.png'>
 	    <br>
 	    <hr>
 	    <br>
-	    <h4><b>High: <i>{{ day["high"] }}</i></b></h4>
+	    <h4><b>High: <i>{{ weatherContent["temperatureMax"] F}}</i></b></h4>
 	    <br>
-	    <h4><b>Low: <i>{{ day["low"] }}</i></b></h4>
+	    <h4><b>Low: <i>{{ weatherContent["temperatureMin"] F}}</i></b></h4>
 	    <br>
 	  </div>
 	</div>
@@ -72,9 +72,3 @@
   </div>
 </div>
 {% endblock %}
-
-<form>
-  Please Enter Your Address:
-  <br>
-  <input type="text" name="address"><br>
-</form>
