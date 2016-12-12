@@ -14,16 +14,16 @@ topaG -- 2016-12-06 4:30 PM
 - Tested google geocoder api
 
 malickS -- 2016-12-06
--Sucessfully created news data puller
+- Sucessfully created news data puller
 
 lamE -- 2016-12-06 7:30 PM
 - Made the base.html page compatible with this project.
 
 malickS -- 2016-12-07
--Expapnded newsUtils.py, made a list of possible sources and a function that allows you to get the latest 10 articles by source.
+- Expapnded newsUtils.py, made a list of possible sources and a function that allows you to get the latest 10 articles by source.
 
 malickS -- 2016-12-07
--Changed function to let you choose if you want top, popular, or latest.
+- Changed function to let you choose if you want top, popular, or latest.
 
 zhangH -- 2016-12-07 2:04 AM
 - Created utils folder
@@ -35,7 +35,7 @@ lamE -- 2016-12-07 9:04 PM
 - Added basic functions to app.py and newsUtils.py to get the index.html News site running.
 - Configured index.html to list news articles and their images. Basic functionality with news site achieved.
 
-malickS -- 2016-12-08
+m alickS -- 2016-12-08
 -Added NYTimes API as backup for when newsapi goes down
 
 zhangH -- 2016-12-09 (a little past midnight)
@@ -48,6 +48,10 @@ zhangH -- 2016-12-09 2:07 PM
 - Fed weather data to template
 
 lamE -- 2016-12-10 5:31 PM
--Weather.html and weatheraddress.html files redone due to being overwritten by commit. Improvements made. Weatheraddress.html gives address submissions to be processed and displayed accordingly on weather.html.
--Changed some aesthetic things on INDEX.
--Began work on the secondary CSS file.
+- Weather.html and weatheraddress.html files redone due to being overwritten by commit. Improvements made. Weatheraddress.html gives address submissions to be processed and displayed accordingly on weather.html.
+- Changed some aesthetic things on INDEX.
+- Began work on the secondary CSS file.
+
+lamE -- 2016-12-10 7:43 PM
+- Optimized collection and distribution of data for the current day + 7 days while working with Henry
+- Corrected variables and put up more information for the current day's weather.
