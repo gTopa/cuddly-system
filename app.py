@@ -18,7 +18,7 @@ def weather():
         return render_template("weather.html", current=curr, weatherContent=p["daily"]["data"])
                 #return render_template('weather.html', adrForm="weatherContent=wc")
     else:
-        return '<form action="/submitAddress" method="POST">Address: <input type="text" name="address"><input type="submit" name="submit" value="submit"><br></form>'
+        return render_template("weatheraddress.html")
 
 @app.route("/submitAddress", methods=['POST'])
 def submitAddress():
