@@ -30,8 +30,8 @@ def submitAddress():
 
 @app.route("/news")
 def news():
-    #dic = samplenews(66,'latest')
-    #return render_template("index.html", newsactive="active", news=dic)
+    dic = samplenews(66,'latest')
+    return render_template("index.html", newsactive="active", news=dic)
     return 'hi'
 
 @app.route("/test1")
