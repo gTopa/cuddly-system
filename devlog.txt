@@ -55,3 +55,7 @@ lamE -- 2016-12-10 5:31 PM
 lamE -- 2016-12-10 7:43 PM
 - Optimized collection and distribution of data for the current day + 7 days while working with Henry
 - Corrected variables and put up more information for the current day's weather.
+
+zhangH -- 2016-12-11 8:20 PM
+- Sent current variable to render template in weather route
+- Fixed errors on displaying it

@@ -14,9 +14,9 @@ def root():
 def weather():
     if "lat" in session:
         p=getWeather(session['lat'], session['lng'])
-        return render_template("weather.html", weatherContent=p["daily"]["data"])
-        return p['timezone']
-        #return render_template('weather.html', adrForm="weatherContent=wc")
+        curr=p["daily"]["data"].pop(0)
+        return render_template("weather.html", current=curr, weatherContent=p["daily"]["data"])
+                #return render_template('weather.html', adrForm="weatherContent=wc")
     else:
         return '<form action="/submitAddress" method="POST">Address: <input type="text" name="address"><input type="submit" name="submit" value="submit"><br></form>'
 
