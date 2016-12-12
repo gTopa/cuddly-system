@@ -10,7 +10,7 @@
 <div class="row">
   <div class="col-sm-4">
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-4 text-center">
     <div class="panel panel-default">
       <div class="panel-heading">
 	<center>
@@ -20,8 +20,7 @@
 	</center>
       </div>
       <div class="panel-body">
-	<img src='static/{{ current["icon"] }}.png'>
-	<br>
+	<img class="center-block img-responsive" src='static/{{ current["icon"] }}.png'>
 	<hr>
 	<br>
 	<h4><b>High: <i>{{ current["temperatureMax"] }} F</i></b></h4>
@@ -30,8 +29,6 @@
 	<br>
 	<h4><b>Precipitation Chance: <i>{{ current["precipProbability"] }}</i></b></h4>
 	<h4><b>Wind: <i>{{ current["windSpeed"] }} MPH, {{ current["windBearing"] }}</i></b></h4>
-	<br>
-	<br>
       </div>
     </div>
   </div>
@@ -48,15 +45,15 @@
     </div>
     <div class="row" style="display: inline-block; float: none;">
       {% for day in weatherContent %}
-      <div class="col-sm-3">
+      <div class="col-sm-3 text-center">
 	<div class="panel panel-default">
 	  <div class="panel-heading">
 	    <center>
-	      <h3>{{ weatherContent["time"] }}</h3>
+	      <h3>{{ day["time"] }}</h3>
 	    </center>
 	  </div>
 	  <div class="panel-body">
-	    <img src='static/{{ day["icon"] }}.png'>
+	    <img class="center-block img-responsive" src='static/{{ day["icon"] }}.png'>
 	    <br>
 	    <hr>
 	    <br>
