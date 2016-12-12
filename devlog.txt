@@ -59,3 +59,7 @@ lamE -- 2016-12-10 7:43 PM
 zhangH -- 2016-12-11 8:20 PM
 - Sent current variable to render template in weather route
 - Fixed errors on displaying it
+
+lamE -- 2016-12-11 10:30 PM
+- Added icons for respective weather.
+- Weather.html basic functions finished.
