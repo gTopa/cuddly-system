@@ -20,7 +20,7 @@
 	</center>
       </div>
       <div class="panel-body">
-	<img src='{{ current["icon"] }}.png'>
+	<img src='static/{{ current["icon"] }}.png'>
 	<br>
 	<hr>
 	<br>
@@ -48,7 +48,7 @@
     </div>
     <div class="row" style="display: inline-block; float: none;">
       {% for day in weatherContent %}
-      <div class="col-sm-1">
+      <div class="col-sm-3">
 	<div class="panel panel-default">
 	  <div class="panel-heading">
 	    <center>
@@ -56,13 +56,13 @@
 	    </center>
 	  </div>
 	  <div class="panel-body">
-	    <img src='{{ weatherContent["icon"] }}.png'>
+	    <img src='static/{{ day["icon"] }}.png'>
 	    <br>
 	    <hr>
 	    <br>
-	    <h4><b>High: <i>{{ weatherContent["temperatureMax"] }} F</i></b></h4>
+	    <h4><b>High: <i>{{ day["temperatureMax"] }} F</i></b></h4>
 	    <br>
-	    <h4><b>Low: <i>{{ weatherContent["temperatureMin"] }} F</i></b></h4>
+	    <h4><b>Low: <i>{{ day["temperatureMin"] }} F</i></b></h4>
 	    <br>
 	  </div>
 	</div>

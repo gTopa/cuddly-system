@@ -15,6 +15,7 @@ def weather():
     if "lat" in session:
         p=getWeather(session['lat'], session['lng'])
         curr=p["daily"]["data"].pop(0)
+        print p["daily"]["data"]
         return render_template("weather.html", current=curr, weatherContent=p["daily"]["data"])
                 #return render_template('weather.html', adrForm="weatherContent=wc")
     else:
