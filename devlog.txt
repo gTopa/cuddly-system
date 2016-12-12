@@ -63,3 +63,6 @@ zhangH -- 2016-12-11 8:20 PM
 lamE -- 2016-12-11 10:30 PM
 - Added icons for respective weather.
 - Weather.html basic functions finished.
+
+zhangH -- 2016-12-12 1:36 PM
+- Added autocomplete for address with google places api
