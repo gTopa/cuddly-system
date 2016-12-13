@@ -1,6 +1,6 @@
 from flask import Flask, session, render_template, redirect, url_for, request
 import urllib2, json, requests, os
-#from utils.newsUtils import samplenews
+from utils.newsUtils import samplenews
 from utils.weatherUtils import getWeather, adrToCoords
 
 app = Flask(__name__)
