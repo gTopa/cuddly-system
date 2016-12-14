@@ -38,9 +38,6 @@ lamE -- 2016-12-07 9:04 PM
 m alickS -- 2016-12-08
 -Added NYTimes API as backup for when newsapi goes down
 
-topaG -- 2016-12-08
--Added basic geocoding functionality to app.py
-
 zhangH -- 2016-12-09 (a little past midnight)
 - Merged /weather progress to master
 - Added fixes for user inputs and location choice
