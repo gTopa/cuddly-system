@@ -24,6 +24,8 @@ def weather():
 @app.route("/submitAddress", methods=['POST'])
 def submitAddress():
     adr=adrToCoords(request.form['address'])
+    if adr=="Error":
+        return render_template("weatheraddress.html", error="Invalid Address")
     session['lat']=adr['lat']
     session['lng']=adr['lng']
     return redirect(url_for("weather"))

@@ -18,4 +18,7 @@ def adrToCoords(address):
     u = urllib2.urlopen("https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key=AIzaSyCdgELgiDjIoaZJDPocHK-Ijyh-eilLD0A")
     response = u.read()
     data = json.loads( response )
-    return data['results'][0]['geometry']['location']
+    if len(data['results'])>0:
+        return data['results'][0]['geometry']['location']
+    else:
+        return "Error"
