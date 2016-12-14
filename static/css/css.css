@@ -38,6 +38,7 @@
 
 body {
     background-color: lightgrey;
+    position: relative;
     
 }
 
@@ -81,4 +82,31 @@ footer {
 }
 .jumbotron {
     background-size: cover;
+}
+
+/* panel content  */
+
+img {
+    max-width: 75%;
+    max-height: 75%;
+}
+
+.panel-back {
+    background-color: #4C6663 !important;
+}
+
+/* Scrolling navbar */
+
+.affix {
+    top:0;
+    width: 100%;
+    z-index: 99999 !important;
+}
+.navbar {
+    width: 100%;
+}
+
+.affix ~ .container-fluid {
+    position: relative;
+    top: 50px;
 }

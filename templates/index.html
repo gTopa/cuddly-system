@@ -8,59 +8,65 @@
 </center>
 <br>
 <div class="row">
-  <div class="col-sm-1">
-  </div>
-  <div class="col-sm-3 text-left">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-	<center>
-	  <h4>Recent News</h4>
-	</center>
-      </div>
-      <div class="panel-body">
+  <div class="container-fluid">
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-3 text-left">
+      <div class="panel panel-default">
+	<div class="panel-heading">
+	  <center>
+	    <h2>Recent News</h2>
+	  </center>
+	</div>
+	<div class="panel-body panel-back">
 	  {% for value in news %}
+	  <div class="panel panel-default">
+	    <div class="panel-body">
 	      <a href='{{ value["urlToImage"] }}'> {{ value["title"] }}</a>
 	      <br>
 	      <i>By: </i>{{ value["author"] }} on <b> {{ value["publishedAt"] }} </b>
-	    <br>
-	    <hr>	    
+	    </div>
+	  </div>
 	  {% endfor %}
+	</div>
       </div>
     </div>
-  </div>
-  <div class="col-sm-7 text-left">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-	<center>
-	  <h4>Today's News</h4>
-	</center>
-      </div>
-      <div class="panel-body">
-	<table>
-	  {% for value in news %}
-	  <tr>
-	    <td>
-	      <div class="panel panel-default">
-		<div class="panel-body">
-		  <b>'{{ value["title"] }}'</b> - <i>Written by {{ value["author"] }} on <b>{{ value["publishedAt"] }}</b></i>
-		  <br>
-		  <br>
-		  <img style="max-width:50%; max-height:50%;" src='{{ value["urlToImage"] }}'>
-		  <br>
-		  <br>
-		  {{ value["description"]  }}...
-		  <br>
-		  <br>
-		  <i><a href='{{ value["url"]  }}'>View News Article</a></i>
+    <div class="col-sm-7 text-left">
+      <div class="panel panel-default">
+	<div class="panel-heading">
+	  <center>
+	    <h2>Today's News</h2>
+	  </center>
+	</div>
+	<div class="panel-body panel-back">
+	  <table>
+	    {% for value in news %}
+	    <tr>
+	      <td>
+		<div class="panel panel-default">
+		  <div class="panel-body">
+		    <h3><b>'{{ value["title"] }}'</b></h3>
+		    <br>
+		    <i>Written by {{ value["author"] }} on <b>{{ value["publishedAt"] }}</b></i>
+		    <br>
+		    <br>
+		    <img style="max-width: 75%;max-height: 75%" src='{{ value["urlToImage"] }}'>
+		    <br>
+		    <br>
+		    {{ value["description"]  }}...
+		    <br>
+		    <br>
+		    <i><a href='{{ value["url"]  }}'>View News Article</a></i>
+		  </div>
 		</div>
-	      </div>
-	    </td>
-	  </tr>
-	  {% endfor %}
-	</table>
+	      </td>
+	    </tr>
+	    {% endfor %}
+	  </table>
+	</div>
       </div>
     </div>
+    <div class="col-sm-1"></div>
   </div>
-  <div class="col-sm-1"></div>
 </div>
 {% endblock %}
