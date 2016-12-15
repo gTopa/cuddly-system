@@ -8,63 +8,71 @@
 </center>
 <br>
 <div class="row">
-  <div class="col-sm-4">
-  </div>
-  <div class="col-sm-4 text-center">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-	<center>
-	  <h2>Today's Weather for:</h2>
-	  <br>
-	  <h2>{{ current["time"] }}</h2>
-	</center>
-      </div>
-      <div class="panel-body">
-	<img class="center-block img-responsive" src='static/{{ current["icon"] }}.png'>
-	<hr>
-	<br>
-	<h4><b>High: <i>{{ current["temperatureMax"] }} F</i></b></h4>
-	<br>
-	<h4><b>Low: <i>{{ current["temperatureMin"] }} F</i></b></h4>
-	<br>
-	<h4><b>Precipitation Chance: <i>{{ current["precipProbability"] }}</i></b></h4>
-	<h4><b>Wind: <i>{{ current["windSpeed"] }} MPH, {{ current["windBearing"] }}</i></b></h4>
+  <div class="container-fluid">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4 text-center">
+      <div class="panel panel-default">
+	<div class="panel-heading">
+	  <center>
+	    <h2>Today's Weather for:</h2>
+	    <h2>{{ current["time"] }}</h2>
+	  </center>
+	</div>
+	<div class="panel-body panel-back">
+	  <div class="panel panel-default">
+	    <img class="center-block img-responsive" src='static/{{ current["icon"] }}.png'>
+	    <hr>
+	    <h4><b>High: <i>{{ current["temperatureMax"] }} F</i></b></h4>
+	    <br>
+	    <h4><b>Low: <i>{{ current["temperatureMin"] }} F</i></b></h4>
+	    <br>
+	    <h4><b>Precipitation Chance: <i>{{ current["precipProbability"] }}</i></b></h4>
+	    <h4><b>Wind: <i>{{ current["windSpeed"] }} MPH, {{ current["windBearing"] }}</i></b></h4>
+
+	  </div>
+	</div>
       </div>
     </div>
   </div>
   <div class="col-sm-4"></div>
 </div>
+<br>
 <div class="row">
-  <div class="col-sm-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-	<center>
-	  <h2>Seven Day Forecast</h2>
-	</center>
-      </div>
-    </div>
-    <div class="row" style="display: inline-block; float: none;">
-      {% for day in weatherContent %}
-      <div class="col-sm-3 text-center">
-	<div class="panel panel-default">
-	  <div class="panel-heading">
-	    <center>
-	      <h3>{{ day["time"] }}</h3>
-	    </center>
-	  </div>
-	  <div class="panel-body">
-	    <img class="center-block img-responsive" src='static/{{ day["icon"] }}.png'>
-	    <br>
-	    <hr>
-	    <br>
-	    <h4><b>High: <i>{{ day["temperatureMax"] }} F</i></b></h4>
-	    <br>
-	    <h4><b>Low: <i>{{ day["temperatureMin"] }} F</i></b></h4>
-	    <br>
+  <div class="container-fluid">
+    <div class="col-sm-12 text-center">
+      <div class="panel panel-default">
+	<div class="panel-heading">
+	  <center>
+	    <h2>Seven Day Forecast</h2>
+	  </center>
+	</div>
+	<div class="panel-body panel-back">
+	  <div class="row" style="display: inline-block; float: none;">
+	    {% for day in weatherContent %}
+	    <div class="col-sm-3 text-center">
+	      <div class="panel panel-default">
+		<div class="panel-heading">
+		  <center>
+		    <h3>{{ day["time"] }}</h3>
+		  </center>
+		</div>
+		<div class="panel-body">
+		  <img class="center-block img-responsive" src='static/{{ day["icon"] }}.png'>
+		  <br>
+		  <hr>
+		  <br>
+		  <h4><b>High: <i>{{ day["temperatureMax"] }} F</i></b></h4>
+		  <br>
+		  <h4><b>Low: <i>{{ day["temperatureMin"] }} F</i></b></h4>
+		  <br>
+		</div>
+	      </div>
+	    </div>
+	    {% endfor %}
 	  </div>
 	</div>
       </div>
-      {% endfor %}
     </div>
   </div>
 </div>

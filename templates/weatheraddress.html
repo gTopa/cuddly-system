@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 <head>
-    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
-    <script>
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+  <script>
     var autocomplete;
     var autocomplete2;
     function initialize() {
@@ -15,35 +15,42 @@
     google.maps.event.addListener(autocomplete2, 'place_changed', function() {
     });
     }
-    </script>
+  </script>
 </head>
 
 {% block content %}
-  <div class="row">
-    <div class="col-sm-3">
-    </div>
-    <div class="col-sm-6">
-      <br>
-      <br>
-      <div class="panel panel-default">
-	<div class="panel-heading">
-	  <center>
-	    <h2>Please input your address here!</h2>
-	  </center>
-	</div>
-	<div class="panel-body">
-	  <form role="form" action="/submitAddress" method="POST">
-            Address: <input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text" name="address" width="200px">
-            <br>  
-            <br>
-	    <input class="form-control" type="submit" name="Submit!" value="Submit!">
-          </form>
+{{error|safe}}
+<div class="row">
+  <div class="col-sm-3">
+  </div>
+  <div class="col-sm-6">
+    <br>
+    <br>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+	<center>
+	  <br>
+	  <h2>Please input your address here!</h2>
+  
+  
+	</center>
+      </div>
+      <div class="panel-body panel-back">
+	<div class="panel panel-default">
+	  <div class="panel-body">
+	    <form role="form" action="/submitAddress" method="POST">
+              <b>Address: </b><input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text" name="address" width="200px">
+              <br>  
+              <br>
+	      <input class="form-control" type="submit" name="Submit!" value="Submit!">
+            </form>
 
-		
+	  </div>
 	</div>
       </div>
     </div>
-    <div class="col-sm-3">
-    </div>
   </div>
+  <div class="col-sm-3">
+  </div>
+</div>
 {% endblock %}
