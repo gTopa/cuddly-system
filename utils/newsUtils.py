@@ -70,7 +70,7 @@ sources = ['abc-news-au',
            'wired-de',
            'wirtschafts-woche']
 def samplenews(site,order):
-    stringres = 'https://newsapi.org/v1/articles?source=' + sources[site] + '&sortBy=' + order + '&apiKey=7f93124e015c4d33bbc2e336b0f2244d'
+    stringres = 'https://newsapi.org/v1/articles?source=' + sources[site] + '&sortBy=' + order + '&apiKey=key'
     response = urllib2.urlopen(stringres)
     data = json.load(response)
     dic = data[u'articles']

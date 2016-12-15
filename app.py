@@ -18,16 +18,50 @@ def weather():
             day["time"]=datetime.datetime.fromtimestamp(int(day["time"])).strftime('%Y-%m-%d')
         curr=p["daily"]["data"].pop(0)
         print p["daily"]["data"]
-        return render_template("weather.html", current=curr, weatherContent=p["daily"]["data"])
+        return render_template("weather.html", current=curr, weatherContent=p["daily"]["data"], weatheractive="active", navcolor= "#8e44ad")
                 #return render_template('weather.html', adrForm="weatherContent=wc")
     else:
-        return render_template("weatheraddress.html")
+        return render_template("weatheraddress.html", weatheractive="active", navcolor= "#8e44ad")
 
 @app.route("/submitAddress", methods=['POST'])
 def submitAddress():
+    if request.form['address']=='':
+        return render_template("weatheraddress.html", error=
+                               '''
+                               <div class="row">
+                               <div class="container-fluid">
+                               <div class="col-sm-3">
+                               </div>
+                               <div class="col-sm-6">
+                               <div class="alert alert-danger">
+                               <center><strong>Error!</strong> Invalid Address!</center>
+                               </div>
+                               </div>
+                               <div class="col-sm-3">
+                               </div>
+                               </div>
+                               </div>
+                               '''
+                               , weatheractive="active", navcolor= "#8e44ad")
     adr=adrToCoords(request.form['address'])
     if adr=="Error":
-        return render_template("weatheraddress.html", error="Invalid Address")
+        return render_template("weatheraddress.html", error=
+                               '''
+                               <div class="row">
+                               <div class="container-fluid">
+                               <div class="col-sm-3">
+                               </div>
+                               <div class="col-sm-6">
+                               <div class="alert alert-danger">
+                               <center><strong>Error!</strong> Invalid Address!</center>
+                               </div>
+                               </div>
+                               <div class="col-sm-3">
+                               </div>
+                               </div>
+                               </div>
+                               '''
+                               , weatheractive="active", navcolor= "#8e44ad")
     session['lat']=adr['lat']
     session['lng']=adr['lng']
     return redirect(url_for("weather"))
@@ -35,8 +69,7 @@ def submitAddress():
 @app.route("/news")
 def news():
     dic = samplenews(66,'latest')
-    return render_template("index.html", newsactive="active", news=dic)
-    return 'hi'
+    return render_template("index.html", newsactive="active", news=dic, navcolor="#16a085")
 
 @app.route("/test1")
 def hi():

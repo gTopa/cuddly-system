@@ -87,12 +87,33 @@ footer {
 /* panel content  */
 
 img {
-    max-width: 75%;
-    max-height: 75%;
+    max-width: 75% !important;
+    max-height: 75% !important;
 }
 
 .panel-back {
     background-color: #4C6663 !important;
+}
+
+h2 {
+    font-family: 'Abel';
+    font-weight: bold;
+}
+
+h3 {
+    font-family: 'Abel';
+    font-weight: bold;
+}
+
+h4 {
+    font-family: 'Quicksand' !important;
+    font-weight: bold;
+}
+
+p.author {
+    font-family: 'Quicksand' !important;
+    font-weight: 400;
+    font-size: 13pt;
 }
 
 /* Scrolling navbar */
@@ -110,3 +131,16 @@ img {
     position: relative;
     top: 50px;
 }
+
+a.navbar-brand {
+    font-family: Lobster;
+    font-weight: bold;
+    color: #ecf0f1 !important;
+}
+
+a.nav-tabs {
+    font-family: Quicksand;
+    font-weight: bold;
+    color: #ecf0f1 !important;
+}
+
