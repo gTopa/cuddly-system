@@ -1,10 +1,11 @@
 from flask import Flask, session, render_template, redirect, url_for, request
-import urllib2, json, requests, os
-#from utils.newsUtils import samplenews
+import urllib2, json, os
+from utils.newsUtils import givenews
 from utils.weatherUtils import getWeather, adrToCoords
 
 app = Flask(__name__)
 app.secret_key=os.urandom(32)
+
 
 @app.route("/")
 def root():
@@ -28,9 +29,11 @@ def submitAddress():
     session['lng']=adr['lng']
     return redirect(url_for("weather"))
 
+    categories = ['general', 'technology', 'sport', 'business', 'entertainment']
+
 @app.route("/news")
 def news():
-    dic = samplenews(66,'latest')
+    dic = givenews('abc-news-au');
     return render_template("index.html", newsactive="active", news=dic)
     return 'hi'
 
