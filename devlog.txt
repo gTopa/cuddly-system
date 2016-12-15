@@ -74,5 +74,8 @@ lamE -- 2016-12-13 10:30
 - Did some CSS and added a fixed navbar on top of the page, panel colors, image size limits, and more.
 - Reworked the layout of the news page.
 
-zhangH == 2016-12-14 6:47
+zhangH == 2016-12-14 6:47 
 - Added error pages for weather
+
+zhangH == 2016-12-15 1:22 AM
+- Changed date/time from unix time to standard in weather

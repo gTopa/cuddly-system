@@ -1,5 +1,5 @@
 from flask import Flask, session, render_template, redirect, url_for, request
-import urllib2, json, requests, os
+import urllib2, json, requests, os, datetime
 from utils.newsUtils import samplenews, sources
 from utils.weatherUtils import getWeather, adrToCoords
 
@@ -14,6 +14,8 @@ def root():
 def weather():
     if "lat" in session:
         p=getWeather(session['lat'], session['lng'])
+        for day in p["daily"]["data"]:
+            day["time"]=datetime.datetime.fromtimestamp(int(day["time"])).strftime('%Y-%m-%d')
         curr=p["daily"]["data"].pop(0)
         print p["daily"]["data"]
         return render_template("weather.html", current=curr, weatherContent=p["daily"]["data"])
