@@ -79,9 +79,3 @@ zhangH == 2016-12-14 6:47
 
 zhangH == 2016-12-15 1:22 AM
 - Changed date/time from unix time to standard in weather
-
-lamE -- 2016-12-15 5:14 AM
-- Finished CSS.
-- Edited app.py to change appearance of page depending on page.
-- Error message deployed for address if blank or invalid address inputted.
-- Reworked HTML for many pages to accompany CSS and individual styling.

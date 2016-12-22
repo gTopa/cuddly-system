@@ -35,7 +35,7 @@
   </head>
   <body onload="initialize()" data-spy="scroll" data-target="#myScrollspy" data-offset="10">
    
-    <nav style="z-index: 9999 !important; border-color: {{ navcolor }}; background-color: {{ navcolor }};" class="navbar navbar-inverse" data-spy="affix" data-offset-top="50">
+    <nav style="z-index: 9999 !important;" class="navbar navbar-inverse" data-spy="affix" data-offset-top="50">
       <div class="container-fluid">
 	<div class="navbar-header">
 	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -48,10 +48,10 @@
 	<div class="collapse navbar-collapse" id="myNavbar">
 	  <ul class="nav navbar-nav navbar-left">
 	    <li class="{{ newsactive }}">
-	      <a class="nav-tabs" href="/news">News</a>
+	      <a href="/news">News</a>
 	    </li>
 	    <li class="{{ weatheractive }}">
-	      <a class="nav-tabs" href="/weather">Weather</a>
+	      <a href="/weather">Weather</a>
 	    </li>
 	  </ul>
 	  

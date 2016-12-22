@@ -22,9 +22,9 @@
 	  {% for value in news %}
 	  <div class="panel panel-default">
 	    <div class="panel-body">
-	      <h4><a href='{{ value["urlToImage"] }}'> {{ value["title"] }}</a></h4>
+	      <a href='{{ value["urlToImage"] }}'> {{ value["title"] }}</a>
 	      <br>
-	      <p class="author"><i>By <b>{{ value["author"] }}</b> on <br>{{ value["publishedAt"] }}</i></p>
+	      <i>By: </i>{{ value["author"] }} on <b> {{ value["publishedAt"] }} </b>
 	    </div>
 	  </div>
 	  {% endfor %}
@@ -47,15 +47,16 @@
 		  <div class="panel-body">
 		    <h3><b>'{{ value["title"] }}'</b></h3>
 		    <br>
-		    <p class="author"><i>Written by {{ value["author"] }} on <b>{{ value["publishedAt"] }}</b></i>
-		    </p>
+		    <i>Written by {{ value["author"] }} on <b>{{ value["publishedAt"] }}</b></i>
+		    <br>
 		    <br>
 		    <img style="max-width: 75%;max-height: 75%" src='{{ value["urlToImage"] }}'>
 		    <br>
 		    <br>
-		    <h4>{{ value["description"]  }}...</h4>
+		    {{ value["description"]  }}...
 		    <br>
-		    <h4><i><a href='{{ value["url"]  }}'>View News Article</a></i></h4>
+		    <br>
+		    <i><a href='{{ value["url"]  }}'>View News Article</a></i>
 		  </div>
 		</div>
 	      </td>

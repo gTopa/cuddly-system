@@ -19,7 +19,6 @@
 </head>
 
 {% block content %}
-{{error|safe}}
 <div class="row">
   <div class="col-sm-3">
   </div>
@@ -28,8 +27,10 @@
     <br>
     <div class="panel panel-default">
       <div class="panel-heading">
+      <br>
 	<center>
-	  <br>
+  {{error}}
+  <br>
 	  <h2>Please input your address here!</h2>
   
   
